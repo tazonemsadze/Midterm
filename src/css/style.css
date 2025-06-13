@@ -1,0 +1,136 @@
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/Poppins-Thin.ttf) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: poppins;
+  --text-hFluid: clamp(24px, 3.5vw, 48px);
+  --text-fsPrimary: 16px;
+  --text-fsSecondary: 14px;
+  --text-fsSmall: 12px;
+
+  --color-primary: #29b24e;
+  --color-clrInput: #f8f8f8cc;
+  --shadow-primaryShadow: 0px 4px 20px rgba(41, 178, 78, 0.2);
+}
+
+body {
+  font-family: poppins;
+}
+
+@layer buttons {
+  .btn {
+    @apply bg-[#29B24E] text-white font-poppins text-[14px] px-[26px] py-[13px] rounded-[12px] capitalize;
+  }
+}
+
+@layer navigation {
+  .nav__links {
+    @apply text-[14px] font-poppins text-[14px] capitalize;
+  }
+  .nav__link {
+    @apply flex flex-col justify-center items-center text-[11px] gap-[4px];
+  }
+  .nav__link--svg {
+    @apply w-[24px] h-[24px] stroke-[#292D32] fill-[none];
+  }
+  .nav__link--btn {
+    @apply bg-primary w-[56px] h-[56px] rounded-[12px] flex items-center justify-center mt-[-12px];
+  }
+  .container-sm {
+    @apply max-w-[540px];
+  }
+  .desktop__nav--link {
+    @apply relative  after:absolute after:h-[2px]  after:w-[100%] after:bg-primary after:mb-[-8px] after:bottom-0 after:left-0 after:transform after:scale-0 after:transition-all after:duration-300 after:ease-in-out after:origin-center;
+    @apply hover:after:scale-100 hover:after:duration-300 hover:after:ease-in-out;
+  }
+}
+
+@layer typography {
+  .text-hFluid {
+    @apply text-[var(--text-hFluid)] font-poppins font-extrabold;
+  }
+  .text-fsPrimary {
+    @apply text-[var(--text-fsPrimary)] font-poppins;
+  }
+  .text-fsSecondary {
+    @apply text-[var(--text-fsSecondary)] font-poppins;
+  }
+  .text-fsSmall {
+    @apply text-[var(--text-fsSmall)] font-poppins;
+  }
+}
+
+@layer form {
+  .form__groups--wrapper {
+    @apply flex flex-col gap-[7px];
+  }
+  .form__groups {
+    @apply flex flex-col gap-[10px];
+  }
+  .form__group {
+    @apply text-[11px] flex items-center gap-[5px];
+  }
+  .form__groups input {
+    @apply accent-[#29B24E] outline-[#29B24E];
+  }
+}
+
+@layer card {
+  .el__absolute--vip {
+    @apply absolute top-0 p-[12px];
+  }
+  .absolute__vip--content {
+    @apply text-white bg-[#29B24E] px-[11px] py-[6px] rounded-[15px];
+  }
+  .el__absolute--icon {
+    @apply w-[40px] h-[40px] bg-[#FFFFFF] shadow-[-2px_4px_20px_0px_#6D6D6D40] rounded-full flex items-center justify-center absolute bottom-0  right-0 translate-y-1/2;
+  }
+}
+
+@layer footer {
+  .footer__wrappers {
+    @apply flex  items-center justify-between;
+  }
+  .footer__list {
+    @apply flex flex-col gap-[16px] md:flex-row lg:gap-[48px];
+  }
+}
+
+@layer info {
+  .detail__group {
+    @apply flex justify-between text-right md:flex-col md:justify-start md:gap-[4px]  md:text-left;
+  }
+  .detail--type {
+    @apply text-[12px] text-[#000000] opacity-60 capitalize;
+  }
+  .detail--info {
+    @apply text-[14px] text-[#000000] font-[500] not-italic capitalize;
+  }
+}

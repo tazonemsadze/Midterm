@@ -1,0 +1,24 @@
+{
+  "name": "midterm-tn",
+  "homepage": "https://tazonemsadze.github.io/Midterm/",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.10",
+    "gh-pages": "^6.3.0",
+    "git": "^0.1.5",
+    "tailwindcss": "^4.1.10"
+  }
+}
